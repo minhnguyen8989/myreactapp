@@ -1,13 +1,19 @@
 function ListGroup() {
 
-    const items = ['item1', 'item2', 'item3'];
+    let items = ['item1', 'item2', 'item3'];
+
+    const getMessage = () => {
+        return items.length === 0 && <p>Empty List</p>;
+    };
+
 
     return (
         <>
             <h1>My List Group</h1>
+            {getMessage()}
             <ul className="list-group">
                 {items.map((item) => (
-                    <li className="list-group-item" key={item}>
+                    <li className="list-group-item" key={item} onClick={() =>console.log("item")} >
                         {item}
                     </li>
                 ))}
